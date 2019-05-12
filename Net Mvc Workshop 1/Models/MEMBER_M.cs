@@ -10,7 +10,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 人員編號
         /// </summary>
-        public string USER_ID { get; set; }
+        public int USER_ID { get; set; }
 
         /// <summary>
         /// 中文名稱

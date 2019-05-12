@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -10,22 +11,25 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 書籍名稱
         /// </summary>
+        [DisplayName("書籍名稱")]
         public string BOOK_NAME { get; set; }
 
         /// <summary>
         /// 書籍類別
         /// </summary>
-        public int BOOK_CLASS_ID { get; set; }
+        [DisplayName("圖書類別")]
+        public string BOOK_CLASS_ID { get; set; }
 
         /// <summary>
-        /// 借閱人中文名
+        /// 借閱人編號
         /// </summary>
-        public string USER_CNAME { get; set; }
+        [DisplayName("借閱人")]
+        public string USER_ID { get; set; }
 
         /// <summary>
         /// 書籍狀態
         /// </summary>
-        public char BOOK_STATUS { get; set; }
+        public string BOOK_STATUS { get; set; }
 
     }
 }
