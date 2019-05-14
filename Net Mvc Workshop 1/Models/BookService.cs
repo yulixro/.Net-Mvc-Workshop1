@@ -11,7 +11,6 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 讀取書籍資料
         /// </summary>
-        /// <param name="arg"></param>
         /// <returns></returns>
         public List<Models.BOOK_DATA> GetBook()
         {

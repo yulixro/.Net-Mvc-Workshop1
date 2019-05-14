@@ -9,6 +9,11 @@ namespace Net_Mvc_Workshop_1.Models
     public class MemberService
     {
         public static List<Models.MEMBER_M> memberData = null;
+
+        /// <summary>
+        /// 讀取member資料
+        /// </summary>
+        /// <returns></returns>
         public List<Models.MEMBER_M> GetMember()
         {
             if(memberData == null)
@@ -33,11 +38,10 @@ namespace Net_Mvc_Workshop_1.Models
             return memberData;
         }
 
-        //public List<Models.BOOK_CLASS> GetBookByCondition(Models.BookSearchArg arg)
-        //{
-
-        //}
-
+        /// <summary>
+        /// 建立下拉式選單
+        /// </summary>
+        /// <returns></returns>
         public List<SelectListItem> GetMemberSelectList()
         {
             List<SelectListItem> result = new List<SelectListItem>();

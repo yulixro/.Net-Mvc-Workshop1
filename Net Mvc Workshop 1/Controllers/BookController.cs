@@ -18,6 +18,8 @@ namespace Net_Mvc_Workshop_1.Controllers
             ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList();
             Models.MemberService memberService = new Models.MemberService();
             ViewBag.MemberSelectList = memberService.GetMemberSelectList();
+            Models.BookStatusService bookStatusService = new Models.BookStatusService();
+            ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
             return View();
         }
 
@@ -48,9 +50,11 @@ namespace Net_Mvc_Workshop_1.Controllers
             Models.BookService bookService = new Models.BookService();
             Models.BookClassService bookClassService = new Models.BookClassService();
             Models.MemberService memberService = new Models.MemberService();
+            Models.BookStatusService bookStatusService = new Models.BookStatusService();
             bookService.GetBook();
             bookClassService.GetBookClass();
             memberService.GetMember();
+            bookStatusService.GetStatus();
         }
     }
 }

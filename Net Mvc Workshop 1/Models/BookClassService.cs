@@ -9,6 +9,11 @@ namespace Net_Mvc_Workshop_1.Models
     public class BookClassService
     {
         public static List<Models.BOOK_CLASS> bookClassData = null;
+
+        /// <summary>
+        /// 讀取圖書類別資料
+        /// </summary>
+        /// <returns></returns>
         public List<Models.BOOK_CLASS> GetBookClass()
         {
             if (bookClassData == null)
@@ -45,11 +50,10 @@ namespace Net_Mvc_Workshop_1.Models
             return bookClassData;
         }
 
-        //public List<Models.BOOK_CLASS> GetBookByCondition(Models.BookSearchArg arg)
-        //{
-
-        //}
-
+        /// <summary>
+        /// 建立下拉式選單
+        /// </summary>
+        /// <returns></returns>
         public List<SelectListItem> GetBookClassSelectList()
         {
             List<SelectListItem> result = new List<SelectListItem>();

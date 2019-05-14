@@ -29,7 +29,8 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 書籍狀態
         /// </summary>
-        public string BOOK_STATUS { get; set; }
+        [DisplayName("借閱狀態")]
+        public string Code_Id { get; set; }
 
     }
 }

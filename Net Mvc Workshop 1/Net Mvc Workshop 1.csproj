@@ -115,6 +115,7 @@
     <Compile Include="Models\BookClassService.cs" />
     <Compile Include="Models\BookSearchArg.cs" />
     <Compile Include="Models\BookService.cs" />
+    <Compile Include="Models\BookStatusService.cs" />
     <Compile Include="Models\BOOK_CLASS.cs" />
     <Compile Include="Models\BOOK_CODE.cs" />
     <Compile Include="Models\BOOK_DATA.cs" />

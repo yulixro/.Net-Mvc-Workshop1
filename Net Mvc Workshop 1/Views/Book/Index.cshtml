@@ -11,7 +11,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.BOOK_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.BOOK_NAME, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.TextBoxFor(model => model.BOOK_NAME, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.BOOK_NAME, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -27,30 +27,47 @@
             @Html.DropDownListFor(model => model.USER_ID, (List<SelectListItem>)ViewBag.MemberSelectList, "請選擇", new { @class = "form-control" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Code_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Code_Id, (List<SelectListItem>)ViewBag.BookStatusSelectList, "請選擇", new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <input class="btn btn-light" type="submit" value="查詢" />
+            <input class="btn btn-light" type="reset" value="清除" />
+            <input class="btn btn-light" type="button" value="新增" />
+        </div>
+    </div>
 
 
 }
 
-<table border="1" style="text-align:center;">
+
+<table class="table table-hover table-bordered" style="text-align:center;">
     <tr>
-        <td>書籍編號</td>
-        <td>書籍名稱</td>
-        <td>書籍類別</td>
-        <td>書籍作者</td>
-        <td>購買日期</td>
-        <td>出版商</td>
-        <td>內容簡介</td>
-        <td>借閱狀態</td>
-        <td>書籍保管人</td>
-        <td>建立時間</td>
-        <td>建立使用者</td>
-        <td>修改時間</td>
-        <td>修改使用者</td>
+        <th scope="col">書籍編號</th>
+        <th>書籍名稱</th>
+        <th>書籍類別</th>
+        <th>書籍作者</th>
+        <th>購買日期</th>
+        <th>出版商</th>
+        <th>內容簡介</th>
+        <th>借閱狀態</th>
+        <th>書籍保管人</th>
+        <th>建立時間</th>
+        <th>建立使用者</th>
+        <th>修改時間</th>
+        <th>修改使用者</th>
     </tr>
     @foreach (var item in @ViewBag.Books)
     {
         <tr>
-            <td>@item.BOOK_ID</td>
+            <th scope="row">@item.BOOK_ID</th>
             <td>@item.BOOK_NAME</td>
             <td>@item.BOOK_CLASS_ID</td>
             <td>@item.BOOK_AUTHOR</td>
@@ -66,8 +83,6 @@
         </tr>
     }
 </table>
-
-<button id="insert_btn">新增</button>
 
 
 <script type="text/javascript">
