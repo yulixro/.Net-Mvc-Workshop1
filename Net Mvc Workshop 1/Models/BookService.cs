@@ -21,14 +21,14 @@ namespace Net_Mvc_Workshop_1.Models
                     new BOOK_DATA() {
                         BOOK_ID = 1,
                         BOOK_NAME = "一本書",
-                        BOOK_CLASS_ID = 1,
+                        BOOK_CLASS_ID = "1",
                         BOOK_AUTHOR = "我"
                     },
 
                     new BOOK_DATA() {
                         BOOK_ID = 2,
                         BOOK_NAME = "二本書",
-                        BOOK_CLASS_ID = 2,
+                        BOOK_CLASS_ID = "2",
                         BOOK_AUTHOR = "他"
                     }
                 };

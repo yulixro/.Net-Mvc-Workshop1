@@ -30,7 +30,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// 書籍狀態
         /// </summary>
         [DisplayName("借閱狀態")]
-        public string Code_Id { get; set; }
+        public char? CODE_ID { get; set; }
 
     }
 }

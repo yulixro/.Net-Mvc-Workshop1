@@ -10,7 +10,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 類別代號
         /// </summary>
-        public int BOOK_CLASS_ID { get; set; }
+        public string BOOK_CLASS_ID { get; set; }
 
         /// <summary>
         /// 類別名稱
@@ -20,7 +20,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 建立時間
         /// </summary>
-        public DateTime CREATE_DATE { get; set; }
+        public string CREATE_DATE { get; set; }
 
         /// <summary>
         /// 建立使用者
@@ -30,7 +30,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 修改時間
         /// </summary>
-        public DateTime MODIFY_DATE { get; set; }
+        public string MODIFY_DATE { get; set; }
 
         /// <summary>
         /// 修改使用者

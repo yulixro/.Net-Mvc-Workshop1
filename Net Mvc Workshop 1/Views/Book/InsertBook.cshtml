@@ -6,7 +6,7 @@
 
 <h2>InsertBook</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("InsertBook", "Book", FormMethod.Post, new { id = "form" }))
 {
     @Html.AntiForgeryToken()  ///防止CSRF(Cross-Site Request Forgery)攻擊
 
@@ -123,3 +123,9 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script>
+    $(function () {
+        $("#form").validate();
+    })
+</script>

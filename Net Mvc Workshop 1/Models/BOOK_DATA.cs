@@ -28,7 +28,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// </summary>
         [DisplayName("圖書類別")]
         [Required()]
-        public int BOOK_CLASS_ID { get; set; }
+        public string BOOK_CLASS_ID { get; set; }
 
         /// <summary>
         /// 書籍作者
@@ -64,7 +64,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// </summary>
         [DisplayName("借閱狀態")]
         [Required()]
-        public string BOOK_STATUS { get; set; }
+        public char BOOK_STATUS { get; set; }
 
         /// <summary>
         /// 書籍保管人
@@ -76,7 +76,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// 建立時間
         /// </summary>
         [DisplayName("建立時間")]
-        public DateTime CREATE_DATE { get; set; }
+        public string CREATE_DATE { get; set; }
 
         /// <summary>
         /// 建立使用者
@@ -88,7 +88,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// 修改時間
         /// </summary>
         [DisplayName("修改時間")]
-        public DateTime MODIFY_DATE { get; set; }
+        public string MODIFY_DATE { get; set; }
 
         /// <summary>
         /// 修改使用者

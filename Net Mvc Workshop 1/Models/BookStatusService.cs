@@ -20,22 +20,22 @@ namespace Net_Mvc_Workshop_1.Models
                     new BOOK_CODE
                     {
                         CODE_TYPE = "可以借出",
-                        CODE_ID = "A"
+                        CODE_ID = 'A'
                     },
                     new BOOK_CODE
                     {
                         CODE_TYPE = "已借出",
-                        CODE_ID = "B"
+                        CODE_ID = 'B'
                     },
                     new BOOK_CODE
                     {
                         CODE_TYPE = "不可借出",
-                        CODE_ID = "U"
+                        CODE_ID = 'U'
                     },
                     new BOOK_CODE
                     {
                         CODE_TYPE = "已借出(未領)",
-                        CODE_ID = "C"
+                        CODE_ID = 'C'
                     }
                 };
             }

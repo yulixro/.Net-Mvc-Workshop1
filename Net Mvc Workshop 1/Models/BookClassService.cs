@@ -21,27 +21,27 @@ namespace Net_Mvc_Workshop_1.Models
                 bookClassData = new List<BOOK_CLASS>
                 {
                     new BOOK_CLASS() {
-                        BOOK_CLASS_ID = 1,
+                        BOOK_CLASS_ID = "1",
                         BOOK_CLASS_NAME = "資料庫"
                     },
 
                     new BOOK_CLASS() {
-                        BOOK_CLASS_ID = 2,
+                        BOOK_CLASS_ID = "2",
                         BOOK_CLASS_NAME = "網際網路"
                     },
 
                     new BOOK_CLASS() {
-                        BOOK_CLASS_ID = 3,
+                        BOOK_CLASS_ID = "3",
                         BOOK_CLASS_NAME = "應用系統整合"
                     },
 
                     new BOOK_CLASS() {
-                        BOOK_CLASS_ID = 4,
+                        BOOK_CLASS_ID = "4",
                         BOOK_CLASS_NAME = "家庭保健"
                     },
 
                     new BOOK_CLASS() {
-                        BOOK_CLASS_ID = 5,
+                        BOOK_CLASS_ID = "5",
                         BOOK_CLASS_NAME = "語言"
                     },
                 };

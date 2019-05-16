@@ -22,13 +22,13 @@ namespace Net_Mvc_Workshop_1.Models
                 {
                     new MEMBER_M()
                     {
-                        USER_ID = 1,
+                        USER_ID = "1",
                         USER_CNAME = "尤莉",
                         USER_ENAME = "YuLi"
                     },
                     new MEMBER_M()
                     {
-                        USER_ID = 2,
+                        USER_ID = "2",
                         USER_CNAME = "庫里",
                         USER_ENAME = "KuLi"
                     }

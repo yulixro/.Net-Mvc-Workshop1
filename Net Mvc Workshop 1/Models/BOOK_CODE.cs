@@ -15,7 +15,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// CodeId
         /// </summary>
-        public string CODE_ID { get; set; }
+        public char CODE_ID { get; set; }
 
         /// <summary>
         /// CodeType描述
