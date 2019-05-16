@@ -28,7 +28,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// </summary>
         [DisplayName("圖書類別")]
         [Required()]
-        public string BOOK_CLASS_ID { get; set; }
+        public int BOOK_CLASS_ID { get; set; }
 
         /// <summary>
         /// 書籍作者

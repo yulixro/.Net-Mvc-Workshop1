@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>圖書維護系統</h2>
 
 @using (Html.BeginForm("Index", "Book", FormMethod.Post, new { id = "Form1" }))
 {
@@ -40,7 +40,7 @@
         <div class="col-md-10">
             <input class="btn btn-light" type="submit" value="查詢" />
             <input class="btn btn-light" type="reset" value="清除" />
-            <input class="btn btn-light" type="button" value="新增" />
+            <input class="btn btn-light" type="button" value="新增" onclick="location.href='@Url.Action("InsertBook","Book")'" />
         </div>
     </div>
 
@@ -63,6 +63,7 @@
         <th>建立使用者</th>
         <th>修改時間</th>
         <th>修改使用者</th>
+        <th></th>
     </tr>
     @foreach (var item in @ViewBag.Books)
     {
@@ -80,13 +81,11 @@
             <td>@item.CREATE_USER</td>
             <td>@item.MODIFY_DATE</td>
             <td>@item.MODIFY_USER</td>
+            <td>
+                <button class="btn btn-light" id="update_btn" type="button" value="@item.BOOK_ID">編輯</button>
+                <button class="btn btn-danger" id="delete_btn" type="button" value="@item.BOOK_ID">刪除</button>
+            </td>
         </tr>
     }
 </table>
 
-
-<script type="text/javascript">
-    var list = @ViewBag.Books;
-    console.log(list);
-
-</script>

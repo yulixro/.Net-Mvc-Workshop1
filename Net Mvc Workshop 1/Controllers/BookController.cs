@@ -8,17 +8,25 @@ namespace Net_Mvc_Workshop_1.Controllers
 {
     public class BookController : Controller
     {
+        Models.BookService bookService = new Models.BookService();
+        Models.BookClassService bookClassService = new Models.BookClassService();
+        Models.MemberService memberService = new Models.MemberService();
+        Models.BookStatusService bookStatusService = new Models.BookStatusService();
+
         // GET: Default
         public ActionResult Index()
         {
             Init();
             var books = Models.BookService.bookData;
+            var bookClasses = Models.BookClassService.bookClassData;
+
+            //var result = books.Join(bookClasses, a => a.BOOK_CLASS_ID, b => b.BOOK_CLASS_ID, (a, b) => new {     
+            //});
+ 
+
             ViewBag.Books = books;
-            Models.BookClassService bookClassService = new Models.BookClassService();
             ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList();
-            Models.MemberService memberService = new Models.MemberService();
             ViewBag.MemberSelectList = memberService.GetMemberSelectList();
-            Models.BookStatusService bookStatusService = new Models.BookStatusService();
             ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
             return View();
         }
@@ -32,8 +40,11 @@ namespace Net_Mvc_Workshop_1.Controllers
         [HttpGet()]
         public ActionResult InsertBook()
         {
-            Models.BOOK_DATA result = new Models.BOOK_DATA();
-            return View(result);
+            Init();
+            ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList();
+            ViewBag.MemberSelectList = memberService.GetMemberSelectList();
+            ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
+            return View();
         }
 
         [HttpPost()]
@@ -47,10 +58,6 @@ namespace Net_Mvc_Workshop_1.Controllers
         /// </summary>
         public void Init()
         {
-            Models.BookService bookService = new Models.BookService();
-            Models.BookClassService bookClassService = new Models.BookClassService();
-            Models.MemberService memberService = new Models.MemberService();
-            Models.BookStatusService bookStatusService = new Models.BookStatusService();
             bookService.GetBook();
             bookClassService.GetBookClass();
             memberService.GetMember();
