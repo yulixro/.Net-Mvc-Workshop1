@@ -40,6 +40,7 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 書籍購書日期
         /// </summary>
+        [DisplayFormat(DataFormatString = "{yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("購買日期")]
         [Required()]
         public string BOOK_BOUGHT_DATE { get; set; }

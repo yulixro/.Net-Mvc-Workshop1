@@ -23,11 +23,6 @@ namespace Net_Mvc_Workshop_1.Controllers
             Init();
             var books = Models.BookService.bookData;
             var bookClasses = Models.BookClassService.bookClassData;
-
-            //var result = books.Join(bookClasses, a => a.BOOK_CLASS_ID, b => b.BOOK_CLASS_ID, (a, b) => new {     
-            //});
- 
-
             ViewBag.Books = books;
             ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList();
             ViewBag.MemberSelectList = memberService.GetMemberSelectList();
@@ -75,7 +70,6 @@ namespace Net_Mvc_Workshop_1.Controllers
         [HttpGet()]
         public ActionResult InsertBook()
         {
-            Init();
             ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList();
             ViewBag.MemberSelectList = memberService.GetMemberSelectList();
             ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
@@ -94,8 +88,35 @@ namespace Net_Mvc_Workshop_1.Controllers
             if (ModelState.IsValid)
             {
                 Models.BookService.bookData.Add(book);
-                
             }
+            return RedirectToAction("Index", "Book", null);
+        }
+
+        /// <summary>
+        /// 編輯書籍資料頁面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateBook(int id)
+        {
+            var books = Models.BookService.bookData;
+            var book = books.Find(x => x.BOOK_ID == id);
+            ViewBag.BookClassSelectList = bookClassService.GetBookClassSelectList(book.BOOK_CLASS_ID);
+            ViewBag.MemberSelectList = memberService.GetMemberSelectList();
+            ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
+            ViewBag.book = book;
+            return View();
+        }
+
+        /// <summary>
+        /// 刪除書籍資料事件
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult DeleteBook(int id)
+        {
+            var books = Models.BookService.bookData;
+            var removeList = books.Find(x => x.BOOK_ID == id);
+            books.Remove(removeList);
             return RedirectToAction("Index", "Book", null);
         }
 

@@ -36,16 +36,5 @@ namespace Net_Mvc_Workshop_1.Models
 
             return bookData;
         }
-
-        /// <summary>
-        /// 查詢書籍資料
-        /// </summary>
-        /// <param name="arg"></param>
-        /// <returns></returns>
-    
-        //public List<Models.BOOK_DATA> GetBookByCondition(Models.BookSearchArg arg)
-        //{
-        //    return ;
-        //}
     }
 }

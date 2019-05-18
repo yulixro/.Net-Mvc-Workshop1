@@ -82,8 +82,8 @@
             <td>@item.MODIFY_DATE</td>
             <td>@item.MODIFY_USER</td>
             <td>
-                <button class="btn btn-light" id="update_btn" type="button" value="@item.BOOK_ID">編輯</button>
-                <button class="btn btn-danger" id="delete_btn" type="button" value="@item.BOOK_ID">刪除</button>
+                <button class="btn btn-light" id="update_btn" type="button" onclick="location.href='@Url.Action("UpdateBook","Book",new { id=item.BOOK_ID })'">編輯</button>
+                <button class="btn btn-danger" id="delete_btn" type="button" onclick="location.href='@Url.Action("DeleteBook","Book",new { id=item.BOOK_ID })'">刪除</button>
             </td>
         </tr>
     }

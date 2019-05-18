@@ -1,19 +1,20 @@
 ﻿@model Net_Mvc_Workshop_1.Models.BOOK_DATA
 
 @{
-    ViewBag.Title = "InsertBook";
+    ViewBag.Title = "UpdateBook";
 }
 
-<h2>InsertBook</h2>
+<h2>UpdateBook</h2>
 
-@using (Html.BeginForm("InsertBook", "Book", FormMethod.Post, new { id = "form" }))
+@using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()  ///防止CSRF(Cross-Site Request Forgery)攻擊
+    @Html.AntiForgeryToken() ///防止CSRF(Cross-Site Request Forgery)攻擊
 
     <div class="form-horizontal">
-        <h4>新增書籍</h4>
+        <h4>編輯書籍</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.BOOK_ID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -26,9 +27,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_CLASS_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.BOOK_CLASS_ID, (List<SelectListItem>)ViewBag.BookClassSelectList, "請選擇", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.BOOK_CLASS_ID, (List<SelectListItem>)ViewBag.BookClassSelectList, "請選擇", new { @class = "form-control", @value = ViewBag.book.BOOK_CLASS_ID })
                 @Html.ValidationMessageFor(model => model.BOOK_CLASS_ID, "", new { @class = "text-danger" })
-
             </div>
         </div>
 
@@ -114,7 +114,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="新增" class="btn btn-default" />
+                <input type="submit" value="儲存" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -123,9 +123,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-<script>
-    $(function () {
-        $("#form").validate();
-    })
-</script>

@@ -67,5 +67,25 @@ namespace Net_Mvc_Workshop_1.Models
             }
             return result;
         }
+
+        public List<SelectListItem> GetBookClassSelectList(string id)
+        {
+            List<SelectListItem> result = new List<SelectListItem>();
+            foreach (var row in BookClassService.bookClassData)
+            {
+                var selected = false;
+                if (row.BOOK_CLASS_ID == id)
+                {
+                    selected = true;
+                }
+                result.Add(new SelectListItem()
+                {
+                    Text = row.BOOK_CLASS_NAME.ToString(),
+                    Value = row.BOOK_CLASS_ID.ToString(),
+                    Selected = selected
+                });
+            }
+            return result;
+        }
     }
 }
