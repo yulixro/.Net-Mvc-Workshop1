@@ -87,15 +87,20 @@ namespace Net_Mvc_Workshop_1.Controllers
             ///後端驗證
             if (ModelState.IsValid)
             {
+                book.CREATE_DATE = DateTime.Now;
+                book.CREATE_USER = "YuLi";
+                book.MODIFY_DATE = DateTime.Now;
+                book.MODIFY_USER = "YuLi";
                 Models.BookService.bookData.Add(book);
             }
             return RedirectToAction("Index", "Book", null);
         }
 
         /// <summary>
-        /// 編輯書籍資料頁面
+        /// 修改書籍資料頁面
         /// </summary>
         /// <returns></returns>
+        [HttpGet()]
         public ActionResult UpdateBook(int id)
         {
             var books = Models.BookService.bookData;
@@ -104,7 +109,35 @@ namespace Net_Mvc_Workshop_1.Controllers
             ViewBag.MemberSelectList = memberService.GetMemberSelectList();
             ViewBag.BookStatusSelectList = bookStatusService.GetBookStatusSelectList();
             ViewBag.book = book;
-            return View();
+            return View(book);
+        }
+
+        /// <summary>
+        /// 修改書籍資料事件
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
+        [HttpPost()]
+        public ActionResult UpdateBook(Models.BOOK_DATA book)
+        {
+            var books = Models.BookService.bookData;
+            if (ModelState.IsValid)
+            {
+                var changeBook = books.Find(x => x.BOOK_ID == book.BOOK_ID);
+                books.Remove(changeBook);
+                changeBook.BOOK_NAME = book.BOOK_NAME;
+                changeBook.BOOK_CLASS_ID = book.BOOK_CLASS_ID;
+                changeBook.BOOK_AUTHOR = book.BOOK_AUTHOR;
+                changeBook.BOOK_NOTE = book.BOOK_NOTE;
+                changeBook.BOOK_KEEPER = book.BOOK_KEEPER;
+                changeBook.BOOK_BOUGHT_DATE = book.BOOK_BOUGHT_DATE;
+                changeBook.BOOK_PUBLISHER = book.BOOK_PUBLISHER;
+                changeBook.BOOK_STATUS = book.BOOK_STATUS;
+                changeBook.MODIFY_DATE = DateTime.Now;
+                changeBook.MODIFY_USER = "KuLi";
+                books.Add(changeBook);
+            }
+            return RedirectToAction("Index", "Book", null);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -20,7 +21,9 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 建立時間
         /// </summary>
-        public string CREATE_DATE { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        public DateTime CREATE_DATE { get; set; }
 
         /// <summary>
         /// 建立使用者
@@ -30,7 +33,9 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 修改時間
         /// </summary>
-        public string MODIFY_DATE { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        public DateTime MODIFY_DATE { get; set; }
 
         /// <summary>
         /// 修改使用者

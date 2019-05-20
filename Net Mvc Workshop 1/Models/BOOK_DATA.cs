@@ -40,10 +40,11 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 書籍購書日期
         /// </summary>
-        [DisplayFormat(DataFormatString = "{yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("購買日期")]
         [Required()]
-        public string BOOK_BOUGHT_DATE { get; set; }
+        public DateTime BOOK_BOUGHT_DATE { get; set; }
 
         /// <summary>
         /// 出版商
@@ -70,14 +71,16 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 書籍保管人
         /// </summary>
-        [DisplayName("書籍保管人")]
+        [DisplayName("借閱人")]
         public string BOOK_KEEPER { get; set; }
 
         /// <summary>
         /// 建立時間
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("建立時間")]
-        public string CREATE_DATE { get; set; }
+        public DateTime CREATE_DATE { get; set; }
 
         /// <summary>
         /// 建立使用者
@@ -88,8 +91,10 @@ namespace Net_Mvc_Workshop_1.Models
         /// <summary>
         /// 修改時間
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("修改時間")]
-        public string MODIFY_DATE { get; set; }
+        public DateTime MODIFY_DATE { get; set; }
 
         /// <summary>
         /// 修改使用者
